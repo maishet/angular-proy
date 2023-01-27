@@ -1,0 +1,5 @@
+<h3>Lista clientes</h3>
+<hr>
+<ul *ngFor="let item of listacliente">
+    <li> Nombre: {{item.nombre}} - Edad: {{item.edad | number}}</li> <!-- | number es un pipe, que agrega visualmente la coma -->
+</ul>
