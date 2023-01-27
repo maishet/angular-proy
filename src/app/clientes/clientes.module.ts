@@ -4,13 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { MainPageComponent } from './main-page/main-page.component';
 import { ListadoclientesComponent } from './listadoclientes/listadoclientes.component';
+import { AgregarComponent } from './agregar/agregar.component';
+
+import { ClientesService } from './services/clientes.service';
 
 
 
 @NgModule({
   declarations: [
     MainPageComponent,
-    ListadoclientesComponent
+    ListadoclientesComponent,
+    AgregarComponent
   ],
   exports: [
     MainPageComponent
@@ -18,6 +22,9 @@ import { ListadoclientesComponent } from './listadoclientes/listadoclientes.comp
   imports: [
     CommonModule,
     FormsModule
+  ],
+  providers: [
+    ClientesService
   ]
 })
 export class ClientesModule { }

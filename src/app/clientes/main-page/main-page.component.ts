@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Cliente } from '../interfaces/clientes.interface';
+import { ClientesService } from '../services/clientes.service';
 
 @Component({
   selector: 'app-main-page',
@@ -12,35 +13,24 @@ export class MainPageComponent {
   //   console.log("hey");
   // }
 
-  clientes: Cliente[] = [
-    {
-      nombre: 'Juan',
-      edad: 35
-    },
-    {
-      nombre: 'Pedro',
-      edad: 25
-    }
-  ]
-
-  nuevoCliente: Cliente = {
-    nombre: '',
-    edad: 0,
+  // clientes: Cliente[] = [
+  //   {
+  //     nombre: 'Juan',
+  //     edad: 35
+  //   },
+  //   {
+  //     nombre: 'Pedro',
+  //     edad: 25
+  //   }
+  // ]
+  get clientes(): Cliente[] {
+    return this.clienteservice.clientes;
   }
 
-  // cambiarNombre(event: any) {
-  //   console.log(event.target.value);
-    
-  // }
+  constructor(private clienteservice:ClientesService ) { 
 
-  agregar() {
-    if(this.nuevoCliente.nombre.trim().length != 0) {
-      console.log(this.nuevoCliente);
-      this.clientes.push(this.nuevoCliente);
-      this.nuevoCliente = {
-        nombre: '',
-        edad: 0,
-      }
-    }
+    //realmente al main page no le sirve tener las funciones de agregar o la lista de clientes
+    //por eso se crea un servicio para que se encargue de eso
+    
   }
 }

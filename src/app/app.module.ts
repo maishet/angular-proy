@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { ClientesModule } from './clientes/clientes.module';
 
 import { AppComponent } from './app.component';
-import { ClientesModule } from './clientes/clientes.module';
+
+import { ClientesService } from './clientes/services/clientes.service';
 
 @NgModule({
   declarations: [
@@ -12,7 +14,7 @@ import { ClientesModule } from './clientes/clientes.module';
     BrowserModule,
     ClientesModule
   ],
-  providers: [],
+  providers: [  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

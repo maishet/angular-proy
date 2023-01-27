@@ -3,31 +3,11 @@
 
 <div class="row">
     <div class="col">
-        <app-listadoclientes [data]="clientes">
-        </app-listadoclientes>
+        <!-- Solo esta listando -->
+        <app-listadoclientes></app-listadoclientes>
     </div>
     <div class="col">
-        <h3>Agregar</h3>
-        <hr>
-        <!-- <form (click)="agregar($event)"> -->
-        <form (ngSubmit)="agregar()">
-            <input 
-                type="text" 
-                placeholder="Nombre"
-                name="nombre"
-                [(ngModel)]="nuevoCliente.nombre"
-            />
-<!-- 
-            value="Carlos"
-            (input)="cambiarNombre($event)" --> <!-- hace lo mismo que lo de arriba -->
-
-            <input 
-                type="number" 
-                placeholder="Edad"
-                name="edad"
-                [(ngModel)]="nuevoCliente.edad"
-                />
-            <button type="submit">Agregar</button>
-        </form>
+        <!-- esta listando y agregando -->
+        <app-agregar></app-agregar>
     </div>
 </div>
